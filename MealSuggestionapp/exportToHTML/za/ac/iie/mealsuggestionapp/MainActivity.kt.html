@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">za</span><span class="s2">.</span><span class="s1">ac</span><span class="s2">.</span><span class="s1">iie</span><span class="s2">.</span><span class="s1">mealsuggestionapp</span>
+
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">EditText</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">activity</span><span class="s2">.</span><span class="s1">enableEdgeToEdge</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">core</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">ViewCompat</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">core</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">WindowInsetsCompat</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">lifecycle</span><span class="s2">.</span><span class="s1">findViewTreeViewModelStoreOwner</span>
+
+<span class="s1">private </span><span class="s0">var </span><span class="s2">&lt;</span><span class="s1">T</span><span class="s2">&gt; </span><span class="s1">Comparable</span><span class="s2">&lt;</span><span class="s1">T</span><span class="s2">&gt;.</span><span class="s1">text: String</span>
+    <span class="s1">get</span><span class="s2">() {</span>
+        <span class="s1">TODO</span><span class="s2">(</span><span class="s3">&quot;Not yet implemented&quot;</span><span class="s2">)</span>
+    <span class="s2">}</span>
+    <span class="s1">set</span><span class="s2">(</span><span class="s1">value</span><span class="s2">) {}</span>
+
+<span class="s0">class </span><span class="s1">MainActivity : AppCompatActivity</span><span class="s2">() {</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState: Bundle?</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">)</span>
+        <span class="s1">enableEdgeToEdge</span><span class="s2">()</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_main</span><span class="s2">)</span>
+
+        <span class="s0">val </span><span class="s1">edtTime </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">&lt;</span><span class="s1">EditText</span><span class="s2">&gt;(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">edtTime</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">btnsuggest </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">&lt;</span><span class="s1">Button</span><span class="s2">&gt;(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnsuggest</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">btnreset </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">&lt;</span><span class="s1">Button</span><span class="s2">&gt;(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">btnreset</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">txtsuggestion </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">&lt;</span><span class="s1">TextView</span><span class="s2">&gt;(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">txtsuggestion</span><span class="s2">)</span>
+        <span class="s1">btnreset</span><span class="s2">.</span><span class="s1">setOnClickListener </span><span class="s2">{}</span>
+
+ 
+        <span class="s1">btnsuggest</span><span class="s2">.</span><span class="s1">setOnClickListener </span><span class="s2">{</span>
+
+            <span class="s0">val </span><span class="s1">timeDay </span><span class="s2">= </span><span class="s1">edtTime</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+
+            <span class="s0">var </span><span class="s1">suggestion </span><span class="s2">= </span><span class="s3">&quot;Empty&quot;</span>
+
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">timeDay </span><span class="s2">== </span><span class="s3">&quot;Morning&quot;</span><span class="s2">) {</span>
+                <span class="s1">suggestion </span><span class="s2">= </span><span class="s3">&quot;Breakfast-Pancakes or Fruitsalad&quot;</span>
+            <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">timeDay </span><span class="s2">== </span><span class="s3">&quot;Mid Morning&quot;</span><span class="s2">) {</span>
+                <span class="s1">suggestion </span><span class="s2">= </span><span class="s3">&quot;Morning-Snack-Water and packet of ricecakes&quot;</span>
+            <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">timeDay </span><span class="s2">== </span><span class="s3">&quot;Lunch&quot;</span><span class="s2">) {</span>
+                <span class="s1">suggestion </span><span class="s2">= </span><span class="s3">&quot;Lunch-Saled or wrap&quot;</span>
+            <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">timeDay </span><span class="s2">== </span><span class="s3">&quot;Afternoon -Snack&quot;</span><span class="s2">) {</span>
+                <span class="s1">suggestion </span><span class="s2">= </span><span class="s3">&quot;Afternoon Snack-coke and slice of cake&quot;</span>
+            <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">timeDay </span><span class="s2">== </span><span class="s3">&quot;dinner&quot;</span><span class="s2">) {</span>
+                <span class="s1">suggestion </span><span class="s2">= </span><span class="s3">&quot;Main meal-Home cooked meal with vegtables and a coffee&quot;</span>
+            <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">timeDay </span><span class="s2">== </span><span class="s3">&quot;dinner-Snack&quot;</span><span class="s2">) {</span>
+                <span class="s1">suggestion </span><span class="s2">= </span><span class="s3">&quot;after dinner Snack-Ice cream&quot;</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s1">suggestion</span><span class="s2">= </span><span class="s3">&quot;Enter correct time of day (Morning,Mid Morning,Lunch,Afternoon Snack,dinner,dinner Dnack)&quot;</span>
+            <span class="s2">}</span>
+            <span class="s1">txtsuggestion</span><span class="s2">.</span><span class="s1">text</span><span class="s2">=</span><span class="s1">suggestion</span>
+        <span class="s2">}</span>
+
+
+        <span class="s1">ViewCompat</span><span class="s2">.</span><span class="s1">setOnApplyWindowInsetsListener</span><span class="s2">(</span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">main</span><span class="s2">)) { </span><span class="s1">v</span><span class="s2">, </span><span class="s1">insets </span><span class="s2">-&gt;</span>
+            <span class="s0">val </span><span class="s1">systemBars </span><span class="s2">= </span><span class="s1">insets</span><span class="s2">.</span><span class="s1">getInsets</span><span class="s2">(</span><span class="s1">WindowInsetsCompat</span><span class="s2">.</span><span class="s1">Type</span><span class="s2">.</span><span class="s1">systemBars</span><span class="s2">())</span>
+            <span class="s1">v</span><span class="s2">.</span><span class="s1">setPadding</span><span class="s2">(</span><span class="s1">systemBars</span><span class="s2">.</span><span class="s1">left</span><span class="s2">, </span><span class="s1">systemBars</span><span class="s2">.</span><span class="s1">top</span><span class="s2">, </span><span class="s1">systemBars</span><span class="s2">.</span><span class="s1">right</span><span class="s2">, </span><span class="s1">systemBars</span><span class="s2">.</span><span class="s1">bottom</span><span class="s2">)</span>
+            <span class="s1">insets</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
